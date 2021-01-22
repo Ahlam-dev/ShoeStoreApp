@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screens.welcome.welcomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/removed_background"
+        android:gravity="center_horizontal">
+
+
+        <TextView
+            android:id="@+id/welcome"
+            style="@style/Title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="cursive"
+            android:gravity="center_horizontal"
+            android:text="@string/Welcome"
+            android:textColor="@color/yellow"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/explore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.101"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/explore"
+            android:layout_width="166dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="377dp"
+            android:fontFamily="@font/roboto"
+            android:lineSpacingExtra="8sp"
+            android:shadowColor="@color/cardview_shadow_start_color"
+            android:shadowRadius="2"
+            android:text="@string/exploreMore"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
+        <Button
+            android:id="@+id/letsGo_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="260dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/buttonshape"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/LetGo_Button"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
