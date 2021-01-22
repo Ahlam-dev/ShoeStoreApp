@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.welcome.welcomeFragment">
 
+    <!-- using ConstraintLayout instead of linearLayout
+    because it was hard to place some views without using large margin values -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/welcome_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/removed_background"
         android:gravity="center_horizontal">
-
 
         <TextView
             android:id="@+id/welcome"
@@ -32,9 +33,10 @@
 
         <TextView
             android:id="@+id/explore"
-            android:layout_width="166dp"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="220dp"
             android:layout_marginBottom="377dp"
             android:fontFamily="@font/roboto"
             android:lineSpacingExtra="8sp"
@@ -44,6 +46,7 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/welcome" />
 

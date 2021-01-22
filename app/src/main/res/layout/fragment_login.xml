@@ -4,86 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.Login.LoginFragment">
 
-
+    <!-- using ConstraintLayout rather than linearLayout
+    to reduce the rendering time because the layout is pretty complex and
+   it contains views placed on top of each other -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/login_Fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backgroundyellow">
+        <!-- header image -->
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="fitCenter"
+            android:src="@drawable/login_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!-- header title -->
+        <TextView
+            android:id="@+id/shoeHeader"
+            style="@style/Title_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:fontFamily="cursive"
+            android:text="@string/shoeland"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
+        <!-- cardview as background for login fields -->
         <androidx.cardview.widget.CardView
             android:id="@+id/logincard"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="140dp"
             android:layout_marginEnd="50dp"
-            android:layout_marginBottom="150dp"
+            android:layout_marginBottom="130dp"
             app:cardBackgroundColor="@color/cardview_light_background"
             app:cardCornerRadius="@dimen/cornerRadius"
             app:cardElevation="0dp"
             app:cardPreventCornerOverlap="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.844" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
-                android:adjustViewBounds="false"
-                android:cropToPadding="false"
-                android:scaleType="fitCenter"
-                android:src="@drawable/login_header" />
-
-            <TextView
-                android:id="@+id/shoeHeader"
-                style="@style/Title_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="cursive"
-                android:text="@string/shoeland"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="36sp" />
-        </LinearLayout>
-
+            app:layout_constraintTop_toBottomOf="@+id/shoeHeader" />
+        <!-- email label -->
         <TextView
             android:id="@+id/email"
             style="@style/fieldStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:text="@string/email"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.117"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
+            app:layout_constraintStart_toStartOf="@+id/logincard"
+            app:layout_constraintTop_toBottomOf="@+id/shoeHeader" />
+        <!-- email textfield -->
         <EditText
             android:id="@+id/EmailAddress"
             style="@style/fieldStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:backgroundTint="@android:color/darker_gray"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="@+id/logincard"
             app:layout_constraintStart_toStartOf="@+id/email"
             app:layout_constraintTop_toBottomOf="@+id/email" />
-
+        <!-- password label -->
         <TextView
             android:id="@+id/password"
             style="@style/fieldStyle"
@@ -93,7 +92,7 @@
             android:text="@string/password"
             app:layout_constraintStart_toStartOf="@+id/EmailAddress"
             app:layout_constraintTop_toBottomOf="@+id/EmailAddress" />
-
+        <!-- password textfield -->
         <EditText
             android:id="@+id/passwordfeild"
             style="@style/fieldStyle"
@@ -105,7 +104,7 @@
             app:layout_constraintEnd_toEndOf="@+id/EmailAddress"
             app:layout_constraintStart_toStartOf="@+id/password"
             app:layout_constraintTop_toBottomOf="@+id/password" />
-
+        <!-- login button -->
         <Button
             android:id="@+id/login_button"
             android:layout_width="0dp"
@@ -123,7 +122,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordfeild" />
-
+        <!-- register button -->
         <Button
             android:id="@+id/register_button"
             style="@style/Widget.AppCompat.Button.Borderless"

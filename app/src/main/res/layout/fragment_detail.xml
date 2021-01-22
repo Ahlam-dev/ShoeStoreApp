@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.ShoeDetail.DetailFragment">
-<data>
+    <data>
     <variable
         name="Shoe"
         type="com.udacity.shoestore.models.Shoe" />
+    </data>
 
-</data>
-
+    <!-- using ConstraintLayout because the layout is complex
+     and I needed to place the views into two columns-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +34,7 @@
             app:layout_constraintVertical_bias="0.0">
 
         </androidx.cardview.widget.CardView>
-
+        <!-- Shoe Company label-->
         <TextView
             android:id="@+id/companyname"
             android:layout_width="wrap_content"
@@ -42,7 +43,7 @@
             app:layout_constraintBottom_toTopOf="@+id/shoesize"
             app:layout_constraintStart_toStartOf="@+id/shoename"
             app:layout_constraintTop_toBottomOf="@+id/shoename" />
-
+        <!-- Shoe Company textField-->
         <EditText
             android:id="@+id/editTextShoeCompany"
             style="@style/fieldStyle"
@@ -53,7 +54,7 @@
             app:layout_constraintBottom_toTopOf="@+id/editTextShoeSize"
             app:layout_constraintStart_toStartOf="@+id/editTextShoeName"
             app:layout_constraintTop_toBottomOf="@+id/editTextShoeName" />
-
+        <!-- Shoe size label-->
         <TextView
             android:id="@+id/shoesize"
             android:layout_width="wrap_content"
@@ -62,20 +63,18 @@
             app:layout_constraintBottom_toTopOf="@+id/description"
             app:layout_constraintStart_toStartOf="@+id/companyname"
             app:layout_constraintTop_toBottomOf="@+id/companyname" />
-
+        <!-- Shoe Description textField-->
         <EditText
             android:id="@+id/editTextShoeSize"
             style="@style/fieldStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-
             android:ems="3"
             android:inputType="number|numberDecimal"
             app:layout_constraintBottom_toTopOf="@+id/editTextShoeDescription"
             app:layout_constraintStart_toStartOf="@+id/editTextShoeCompany"
             app:layout_constraintTop_toBottomOf="@+id/editTextShoeCompany" />
-
+        <!-- Shoe Description label-->
         <TextView
             android:id="@+id/description"
             android:layout_width="wrap_content"
@@ -84,7 +83,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/cardView"
             app:layout_constraintStart_toStartOf="@+id/shoesize"
             app:layout_constraintTop_toBottomOf="@+id/shoesize" />
-
+        <!-- Shoe Detail screen header -->
         <TextView
             android:id="@+id/addShoe"
             style="@style/Title_text"
@@ -96,7 +95,7 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
+        <!-- Shoe Description textField-->
         <EditText
             android:id="@+id/editTextShoeDescription"
             style="@style/fieldStyle"
@@ -109,7 +108,7 @@
             app:layout_constraintEnd_toEndOf="@+id/cardView"
             app:layout_constraintStart_toStartOf="@+id/editTextShoeSize"
             app:layout_constraintTop_toBottomOf="@+id/editTextShoeSize" />
-
+        <!-- Shoe name textField-->
         <EditText
             android:id="@+id/editTextShoeName"
             android:layout_width="wrap_content"
@@ -121,7 +120,7 @@
             app:layout_constraintBottom_toTopOf="@+id/editTextShoeCompany"
             app:layout_constraintStart_toEndOf="@+id/shoename"
             app:layout_constraintTop_toTopOf="@+id/cardView" />
-
+        <!-- Shoe name label-->
         <TextView
             android:id="@+id/shoename"
             android:layout_width="wrap_content"
@@ -131,7 +130,7 @@
             app:layout_constraintBottom_toTopOf="@+id/companyname"
             app:layout_constraintStart_toStartOf="@+id/cardView"
             app:layout_constraintTop_toTopOf="@+id/cardView" />
-
+        <!-- save button-->
         <Button
             android:id="@+id/Save_button"
             android:layout_width="119dp"
@@ -147,7 +146,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextShoeDescription" />
-
+        <!-- cancel button-->
         <Button
             android:id="@+id/cancel_button"
             android:layout_width="114dp"

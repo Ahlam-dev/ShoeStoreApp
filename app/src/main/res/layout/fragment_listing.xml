@@ -2,7 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     tools:context=".screens.Listing.ListingFragment">
 
 
@@ -12,14 +11,15 @@
         android:layout_height="match_parent"
         android:background="@color/backgroundyellow">
 
-
+        <!-- using LinearLayout because the layout is simple and doesn't need nesting of layout
+         and shoe items to be added in a vertical direction  -->
         <LinearLayout
             android:id="@+id/shoeItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="vertical">
-
+            <!-- add shoe label  -->
             <TextView
                 android:id="@+id/addnewShooe"
                 style="@style/Title_text"
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/AddShoe" />
-
+            <!--  floatingActionButton-->
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButton"
                 android:layout_width="match_parent"
@@ -39,7 +39,6 @@
                 android:focusable="true"
                 android:src="@drawable/ic_add"
                 app:backgroundTint="@color/yellow" />
-
         </LinearLayout>
 
     </ScrollView>

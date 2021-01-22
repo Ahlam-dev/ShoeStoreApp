@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <!-- using cardView to hold the shoe data  -->
     <androidx.cardview.widget.CardView
         android:id="@+id/shoe_data_cardview"
         android:layout_width="match_parent"
@@ -15,14 +15,15 @@
         android:layout_marginBottom="16dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="4dp">
-
+        <!-- using ConstraintLayout because the layout is complex
+        and I needed to place the textViews into two columns-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/shoe_data_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:elevation="6dp"
             android:orientation="vertical">
-
+            <!-- shoe name data-->
             <TextView
                 android:id="@+id/shoename_data"
                 android:layout_width="0dp"
@@ -36,7 +37,7 @@
                 app:layout_constraintVertical_chainStyle="spread"
                 tools:layout_conversion_absoluteHeight="19dp"
                 tools:layout_conversion_absoluteWidth="72dp" />
-
+            <!-- shoe size data-->
             <TextView
                 android:id="@+id/shoesize_data"
                 android:layout_width="0dp"
@@ -49,7 +50,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/companyname_data"
                 tools:layout_conversion_absoluteHeight="19dp"
                 tools:layout_conversion_absoluteWidth="65dp" />
-
+            <!-- shoe description data-->
             <TextView
                 android:id="@+id/description_data"
                 android:layout_width="0dp"
@@ -63,7 +64,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/shoesize_data"
                 tools:layout_conversion_absoluteHeight="19dp"
                 tools:layout_conversion_absoluteWidth="75dp" />
-
+            <!-- shoe company data-->
             <TextView
                 android:id="@+id/companyname_data"
                 android:layout_width="0dp"
@@ -75,7 +76,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/shoename_data"
                 tools:layout_conversion_absoluteHeight="19dp"
                 tools:layout_conversion_absoluteWidth="104dp" />
-
+            <!-- shoe name label-->
             <TextView
                 android:id="@+id/shoename3"
                 android:layout_width="wrap_content"
@@ -89,7 +90,7 @@
                 app:layout_constraintVertical_chainStyle="spread"
                 tools:layout_conversion_absoluteHeight="19dp"
                 tools:layout_conversion_absoluteWidth="72dp" />
-
+            <!-- shoe company label-->
             <TextView
                 android:id="@+id/companyname2"
                 android:layout_width="wrap_content"
@@ -101,7 +102,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/shoename3"
                 tools:layout_conversion_absoluteHeight="19dp"
                 tools:layout_conversion_absoluteWidth="104dp" />
-
+            <!-- shoe size label-->
             <TextView
                 android:id="@+id/shoesize3"
                 android:layout_width="wrap_content"
@@ -113,7 +114,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/companyname2"
                 tools:layout_conversion_absoluteHeight="19dp"
                 tools:layout_conversion_absoluteWidth="65dp" />
-
+            <!-- shoe description label-->
             <TextView
                 android:id="@+id/description4"
                 android:layout_width="wrap_content"
