@@ -20,50 +20,47 @@ import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.MainActivity
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentListingBinding
+import com.udacity.shoestore.databinding.NewitemBinding
 import com.udacity.shoestore.models.Shoe
 import kotlinx.android.synthetic.main.fragment_listing.view.*
 
 
 class ListingFragment : Fragment() {
-    private lateinit var binding: FragmentListingBinding
+    private lateinit var ListingBinding: FragmentListingBinding
+    private lateinit var NewItemBinding:NewitemBinding
     private val viewModel: ShoesListViewModel by activityViewModels()
     private lateinit var mylayout: LinearLayout
-    private lateinit var mynewView: View
-    private lateinit var name: TextView
-    private lateinit var company: TextView
-    private lateinit var size: TextView
-    private lateinit var description: TextView
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?): View? {
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_listing, container, false)
-        binding.floatingActionButton.setOnClickListener {
+        ListingBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_listing, container, false)
+        ListingBinding.floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.action_listingFragment_to_detailFragment)
         }
-        mylayout = binding.shoeItem
+        mylayout = ListingBinding.shoeItem
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { newList ->
             if (newList.size == 0) {
                 Toast.makeText(context, "No Shoe data exist", Toast.LENGTH_SHORT).show()
             } else {
                 newList.forEach {
-                    mynewView = getLayoutInflater().inflate(R.layout.newitem, null, false)
-                    name = mynewView.findViewById(R.id.shoename_data)
-                    company = mynewView.findViewById(R.id.companyname_data)
-                    size = mynewView.findViewById(R.id.shoesize_data)
-                    description = mynewView.findViewById(R.id.description_data)
-                    company.text = it.company
-                    name.text = it.name
-                    size.text = it.size.toString()
-                    description.text = it.description
-                    mylayout.addView(mynewView)
+                    NewItemBinding=NewitemBinding.inflate(inflater, container, false)
+
+                    NewItemBinding.apply {
+                        shoesizeData.text=it.size.toString()
+                        companynameData.text=it.company
+                        shoenameData.text=it.name
+                        descriptionData.text = it.description
+                        mylayout.addView(shoeDataCardview)
+
+                    }
                 }
             }
         })
         setHasOptionsMenu(true)
 
-        return binding.root
+        return ListingBinding.root
 
     }
 

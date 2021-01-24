@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
     <!-- using cardView to hold the shoe data  -->
     <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/shoe_data_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,117 +15,117 @@
         app:cardElevation="4dp">
         <!-- using ConstraintLayout because the layout is complex
         and I needed to place the textViews into two columns-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/shoe_data_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:elevation="6dp"
-            android:orientation="vertical">
-            <!-- shoe name data-->
-            <TextView
-                android:id="@+id/shoename_data"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="56dp"
-                app:layout_constraintBottom_toTopOf="@+id/companyname_data"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/shoename3"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="spread"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_conversion_absoluteWidth="72dp" />
-            <!-- shoe size data-->
-            <TextView
-                android:id="@+id/shoesize_data"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="56dp"
-                app:layout_constraintBottom_toTopOf="@+id/description_data"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/companyname_data"
-                app:layout_constraintTop_toBottomOf="@+id/companyname_data"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_conversion_absoluteWidth="65dp" />
-            <!-- shoe description data-->
-            <TextView
-                android:id="@+id/description_data"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="56dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/shoesize_data"
-                app:layout_constraintTop_toBottomOf="@+id/shoesize_data"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_conversion_absoluteWidth="75dp" />
-            <!-- shoe company data-->
-            <TextView
-                android:id="@+id/companyname_data"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="56dp"
-                app:layout_constraintBottom_toTopOf="@+id/shoesize_data"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/shoename_data"
-                app:layout_constraintTop_toBottomOf="@+id/shoename_data"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_conversion_absoluteWidth="104dp" />
-            <!-- shoe name label-->
-            <TextView
-                android:id="@+id/shoename3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="@string/shoename"
-                app:layout_constraintBottom_toTopOf="@+id/companyname2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="spread"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_conversion_absoluteWidth="72dp" />
-            <!-- shoe company label-->
-            <TextView
-                android:id="@+id/companyname2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_bold"
-                android:text="@string/companyName"
-                app:layout_constraintBottom_toTopOf="@+id/shoesize3"
-                app:layout_constraintStart_toStartOf="@+id/shoename3"
-                app:layout_constraintTop_toBottomOf="@+id/shoename3"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_conversion_absoluteWidth="104dp" />
-            <!-- shoe size label-->
-            <TextView
-                android:id="@+id/shoesize3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_bold"
-                android:text="@string/shoeSize"
-                app:layout_constraintBottom_toTopOf="@+id/description4"
-                app:layout_constraintStart_toStartOf="@+id/companyname2"
-                app:layout_constraintTop_toBottomOf="@+id/companyname2"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_conversion_absoluteWidth="65dp" />
-            <!-- shoe description label-->
-            <TextView
-                android:id="@+id/description4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="@string/description"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/shoesize3"
-                app:layout_constraintTop_toBottomOf="@+id/shoesize3"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_conversion_absoluteWidth="75dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/shoe_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        android:paddingTop="8dp">
+        <!-- shoe name data-->
+        <TextView
+            android:id="@+id/shoename_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="56dp"
+            app:layout_constraintBottom_toTopOf="@+id/companyname_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/shoename3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread"
+            tools:layout_conversion_absoluteHeight="19dp"
+            tools:layout_conversion_absoluteWidth="72dp" />
+        <!-- shoe size data-->
+        <TextView
+            android:id="@+id/shoesize_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="56dp"
+            app:layout_constraintBottom_toTopOf="@+id/description_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/companyname_data"
+            app:layout_constraintTop_toBottomOf="@+id/companyname_data"
+            tools:layout_conversion_absoluteHeight="19dp"
+            tools:layout_conversion_absoluteWidth="65dp" />
+        <!-- shoe description data-->
+        <TextView
+            android:id="@+id/description_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="56dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/shoesize_data"
+            app:layout_constraintTop_toBottomOf="@+id/shoesize_data"
+            tools:layout_conversion_absoluteHeight="19dp"
+            tools:layout_conversion_absoluteWidth="75dp" />
+        <!-- shoe company data-->
+        <TextView
+            android:id="@+id/companyname_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="56dp"
+            app:layout_constraintBottom_toTopOf="@+id/shoesize_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/shoename_data"
+            app:layout_constraintTop_toBottomOf="@+id/shoename_data"
+            tools:layout_conversion_absoluteHeight="19dp"
+            tools:layout_conversion_absoluteWidth="104dp" />
+        <!-- shoe name label-->
+        <TextView
+            android:id="@+id/shoename3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/shoename"
+            app:layout_constraintBottom_toTopOf="@+id/companyname2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread"
+            tools:layout_conversion_absoluteHeight="19dp"
+            tools:layout_conversion_absoluteWidth="72dp" />
+        <!-- shoe company label-->
+        <TextView
+            android:id="@+id/companyname2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/companyName"
+            app:layout_constraintBottom_toTopOf="@+id/shoesize3"
+            app:layout_constraintStart_toStartOf="@+id/shoename3"
+            app:layout_constraintTop_toBottomOf="@+id/shoename3"
+            tools:layout_conversion_absoluteHeight="19dp"
+            tools:layout_conversion_absoluteWidth="104dp" />
+        <!-- shoe size label-->
+        <TextView
+            android:id="@+id/shoesize3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/shoeSize"
+            app:layout_constraintBottom_toTopOf="@+id/description4"
+            app:layout_constraintStart_toStartOf="@+id/companyname2"
+            app:layout_constraintTop_toBottomOf="@+id/companyname2"
+            tools:layout_conversion_absoluteHeight="19dp"
+            tools:layout_conversion_absoluteWidth="65dp" />
+        <!-- shoe description label-->
+        <TextView
+            android:id="@+id/description4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/shoesize3"
+            app:layout_constraintTop_toBottomOf="@+id/shoesize3"
+            tools:layout_conversion_absoluteHeight="19dp"
+            tools:layout_conversion_absoluteWidth="75dp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-</LinearLayout>
